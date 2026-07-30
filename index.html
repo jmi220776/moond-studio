@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOOND STUDIO · Orléans</title>
+<meta property="og:title" content="MOOND STUDIO">
+<meta property="og:description" content="On fabrique à partir de ce qui est abîmé, dépareillé, resté en plan.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0f0c0a}
+.stage{
+  position:relative;width:100%;max-width:941px;margin:0 auto;
+}
+.stage img{width:100%;display:block}
+/* zones cliquables calées en % sur les blocs de la maquette */
+.hot{position:absolute;left:0;width:100%;display:block;cursor:pointer}
+/* 01 RMS : bloc rouge */
+.hot-rms{top:31.5%;height:20.5%}
+/* 02 forum : bloc Une Famille Modèle */
+.hot-forum{top:52.5%;height:17%}
+/* repère visuel discret au survol, desktop seulement */
+@media (hover:hover){
+  .hot:hover{outline:2px solid rgba(255,255,255,.15);outline-offset:-6px}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <img src="assets/accueil.jpg" alt="MOOND STUDIO — on fabrique à partir de ce qui est abîmé, dépareillé, resté en plan. Raté mais stylé, Une Famille Modèle, Affiches, MOOND Café.">
+  <a class="hot hot-rms" href="/rms" aria-label="Raté mais stylé — la boutique"></a>
+  <a class="hot hot-forum" href="/forum" aria-label="Une Famille Modèle — le forum"></a>
+</div>
+</body>
+</html>
