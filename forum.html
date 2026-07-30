@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le forum · Une Famille Modèle</title>
+<meta property="og:title" content="Le forum · Une Famille Modèle">
+<meta property="og:description" content="412 membres qui se souviennent d'une série diffusée sur La Quatre, le mardi soir, dans les années 90.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+:root{
+  --noir:#1a1410;--chocolat:#241a12;--kraft:#c9b48f;--papier:#ddcba7;--papier2:#e8dabb;
+  --encre:#2b2015;--encre2:#4a3826;--olive:#4a4a2e;--olive2:#5c5c38;
+  --ocre:#b8842f;--sepia:#8a6f4a;
+}
+body{
+  font-family:'Space Mono',monospace;-webkit-font-smoothing:antialiased;
+  background:var(--noir);color:var(--encre);overflow-x:hidden;
+  background-image:
+    radial-gradient(120% 90% at 50% 0%, #3a2a1c 0%, #241a12 50%, #14100b 100%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.06) 0 2px, transparent 2px 4px);
+  background-attachment:fixed;
+}
+
+/* ===== barre / menu ===== */
+.bar{
+  display:flex;justify-content:space-between;align-items:center;padding:14px 30px;
+  position:sticky;top:0;z-index:50;background:rgba(20,16,11,.94);border-bottom:1px solid #3a2c1e;
+  backdrop-filter:blur(4px);
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mk{width:38px;height:30px;border:2px solid #6b5638;border-radius:5px;display:flex;align-items:center;justify-content:center;background:#2a2016}
+.brand .mk::before{content:"";width:15px;height:15px;border-radius:50%;box-shadow:inset -5px 2px 0 #b9a274;background:#3a2c1c}
+.brand .nm{font-family:'Oswald',sans-serif;color:#d8c39a;font-weight:700;font-size:15px;letter-spacing:.06em;line-height:1}
+.brand .nm small{display:block;font-size:11px;color:#9d8560;letter-spacing:.2em}
+.menu{display:flex;gap:26px}
+.menu a{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#b7a079;text-decoration:none;padding:5px 2px;border-bottom:2px solid transparent;transition:.15s}
+.menu a:hover{color:#e8dabb;border-color:#6b5638}
+.menu a.on{color:#f0e4c8;border-color:var(--ocre)}
+.menu a.soon{color:#7a6647;cursor:default}
+.menu a.soon:hover{color:#7a6647;border-color:transparent}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== hero ===== */
+.hero{padding:44px 0 20px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+.htitle{
+  background:var(--papier2);border-radius:4px;padding:26px 30px 30px;position:relative;
+  box-shadow:6px 8px 24px rgba(0,0,0,.5);transform:rotate(-1deg);
+  background-image:repeating-linear-gradient(0deg, rgba(120,90,50,.05) 0 3px, transparent 3px 6px);
+}
+.htitle::before{content:"";position:absolute;top:-14px;left:40px;width:120px;height:26px;background:rgba(180,150,100,.5);transform:rotate(-3deg);border:1px solid rgba(120,90,50,.3)}
+.htitle h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(52px,7vw,96px);line-height:.86;color:var(--encre);letter-spacing:-.01em;text-transform:uppercase}
+.htitle .sub{font-family:'Caveat',cursive;font-size:clamp(24px,3vw,34px);color:var(--encre2);margin-top:8px;line-height:1}
+.intro{padding:6px 4px}
+.intro p{font-size:14px;line-height:1.9;color:#c3ae86}
+.pin{
+  display:inline-flex;align-items:center;gap:12px;margin-top:22px;
+  background:var(--olive);color:#e8dabb;font-family:'Oswald',sans-serif;letter-spacing:.1em;
+  text-transform:uppercase;font-size:15px;padding:13px 26px;border-radius:5px;border:1px solid #6b6b40;
+  text-decoration:none;box-shadow:3px 4px 0 rgba(0,0,0,.35);transition:.12s;cursor:pointer;
+}
+.pin:hover{transform:translateY(-2px)}
+.pin::before{content:"📌";filter:sepia(1) saturate(.5)}
+
+/* note camille75 */
+.note{
+  background:var(--papier);border-radius:3px;padding:26px 28px 30px 38px;position:relative;
+  transform:rotate(2deg);box-shadow:5px 7px 20px rgba(0,0,0,.5);
+  font-family:'Caveat',cursive;font-size:26px;line-height:1.25;color:#3a2c1c;max-width:340px;margin:10px auto 0;
+}
+.note::before{content:"";position:absolute;left:14px;top:16px;bottom:16px;width:1px;background:repeating-linear-gradient(0deg,#b09468 0 6px,transparent 6px 12px)}
+.note::after{content:"";position:absolute;top:-12px;left:50%;width:16px;height:16px;border-radius:50%;background:#7a8a5a;box-shadow:0 3px 6px rgba(0,0,0,.4);transform:translateX(-50%)}
+.note .sig{display:block;text-align:right;margin-top:14px;font-size:24px;color:#5c4630}
+
+/* ===== bloc générique papier ===== */
+.card{
+  background:var(--papier);border-radius:5px;padding:22px 26px;position:relative;
+  box-shadow:4px 6px 18px rgba(0,0,0,.45);
+  background-image:repeating-linear-gradient(0deg, rgba(120,90,50,.04) 0 3px, transparent 3px 6px);
+}
+.card h3{font-family:'Oswald',sans-serif;font-weight:700;font-size:18px;letter-spacing:.08em;text-transform:uppercase;color:var(--encre);margin-bottom:14px}
+
+/* ===== ligne principale : colonnes + aside ===== */
+.main{display:grid;grid-template-columns:1.5fr .9fr;gap:26px;padding:14px 0 50px;align-items:start}
+
+/* onglets */
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:4px;background:rgba(200,180,143,.16);color:#c3ae86;border:1px solid #5a4630;cursor:pointer}
+.tab.on{background:var(--olive);color:#e8dabb;border-color:#6b6b40}
+
+/* colonnes de certitude */
+.thread{
+  display:grid;grid-template-columns:56px 1fr 1.1fr;gap:18px;align-items:start;
+  padding:20px 0;border-bottom:1px solid rgba(90,70,45,.4);
+}
+.thread:last-child{border-bottom:none}
+.patch{width:56px;height:56px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:26px;border:2px dashed rgba(255,255,255,.25)}
+.patch.p1{background:var(--ocre);color:#3a2c10}
+.patch.p2{background:#6a6a48;color:#e0dcc0}
+.patch.p3{background:#241a12;color:#c9b48f}
+.thread .info h4{font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em;color:var(--encre);line-height:1}
+.thread .info .lab{font-size:11px;letter-spacing:.06em;color:#7a6244;text-transform:uppercase;margin-top:5px}
+.thread .info .cnt{font-size:12px;color:#8a7050;margin-top:9px}
+.thread .info .note2{font-size:12px;color:#9a8158;margin-top:6px;font-style:italic}
+.thread .last{border-left:1px solid rgba(90,70,45,.4);padding-left:16px}
+.thread .last .lb{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8a7050;margin-bottom:5px}
+.thread .last .msg{font-size:13px;line-height:1.5;color:var(--encre2)}
+.thread .last .by{font-size:11px;color:#8a7050;margin-top:7px}
+
+/* aside */
+.aside{display:flex;flex-direction:column;gap:22px}
+.online .h{display:flex;align-items:baseline;gap:8px}
+.online .stat{font-size:13px;line-height:1.8;color:var(--encre2)}
+.avatars{display:flex;gap:7px;margin:12px 0}
+.avatars i{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#a68a5e,#6b5334);border:1px solid #4a3826;display:block}
+.pseudos{font-size:12px;line-height:1.7;color:#5c4630;word-spacing:2px}
+.card a.more{display:inline-block;margin-top:10px;font-size:12px;color:#6a5232;text-decoration:underline}
+
+.stats .row{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px dotted rgba(90,70,45,.4);color:var(--encre2)}
+.stats .row b{font-family:'Oswald',sans-serif}
+
+.affiches .aff{display:flex;gap:10px;padding:9px 0;border-bottom:1px dotted rgba(90,70,45,.35)}
+.affiches .aff .ic{font-size:16px}
+.affiches .aff .t{font-size:12.5px;line-height:1.3;color:var(--encre2)}
+.affiches .aff .t b{color:var(--encre)}
+.affiches .aff .t span{color:#8a7050;font-size:11px}
+
+/* pied */
+.foot{padding:24px 0 40px;text-align:center;color:#6b5638;font-size:12px;letter-spacing:.05em}
+.rms-badge{position:fixed;bottom:16px;right:16px;background:#1a1410;border:2px solid #4a3826;border-radius:6px;padding:8px 12px;font-family:'Oswald',sans-serif;color:#c9b48f;font-size:13px;letter-spacing:.08em;text-decoration:none;z-index:40}
+.rms-badge small{display:block;font-size:7px;letter-spacing:.15em;color:#8a7050}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:20px}
+  .main{grid-template-columns:1fr}
+  .thread{grid-template-columns:48px 1fr;gap:12px}
+  .thread .last{grid-column:1 / -1;border-left:none;padding-left:0;border-top:1px solid rgba(90,70,45,.3);padding-top:10px;margin-top:4px}
+  .note{transform:rotate(1deg);max-width:none}
+  .menu{display:none}
+  .wrap{padding:0 16px}
+  .bar{padding:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <a class="brand" href="/">
+    <span class="mk"></span>
+    <span class="nm">MOOND<small>STUDIO</small></span>
+  </a>
+  <nav class="menu">
+    <a class="soon">Le salon</a>
+    <a class="soon">La maison</a>
+    <a href="/rms">La boutique</a>
+    <a href="/forum" class="on">Le forum</a>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="htitle">
+        <h1>Le forum</h1>
+        <div class="sub">Là où les souvenirs trinquent entre eux.</div>
+      </div>
+      <div class="intro">
+        <p>Un lieu pour se rappeler ensemble.<br>
+        Poser une affiche. Raconter un détail. Déposer une image.<br>
+        Ici, on ne vient pas avoir raison.<br>
+        On vient se souvenir ensemble.</p>
+        <a class="pin">Poser une affiche</a>
+      </div>
+    </div>
+    <div class="note">
+      Ici, on ne vient pas avoir raison. On vient se souvenir ensemble.
+      <span class="sig">— camille75</span>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="main">
+    <div>
+      <div class="tabs">
+        <button class="tab on">Tous</button>
+        <button class="tab">Récents</button>
+        <button class="tab">Populaires</button>
+      </div>
+
+      <div class="card">
+        <div class="thread">
+          <div class="patch p1">☀</div>
+          <div class="info">
+            <h4>Le peu qui tient</h4>
+            <div class="lab">Ce dont tout le monde est sûr</div>
+            <div class="cnt">9 fils · 214 messages</div>
+            <div class="note2">Un fil change de colonne quand le forum le décide.</div>
+          </div>
+          <div class="last">
+            <div class="lb">Dernier message</div>
+            <div class="msg">Il y a une cuisine. Personne n'a jamais contesté ça.</div>
+            <div class="by">par ludo452, aujourd'hui, 18:22</div>
+          </div>
+        </div>
+
+        <div class="thread">
+          <div class="patch p2">?</div>
+          <div class="info">
+            <h4>Presque tout le reste</h4>
+            <div class="lab">Ce sur quoi on n'est pas d'accord</div>
+            <div class="cnt">37 fils · 1 291 messages</div>
+            <div class="note2">Trois l'ont fait cette année. Deux sont redescendus.</div>
+          </div>
+          <div class="last">
+            <div class="lb">Dernier message</div>
+            <div class="msg">La grand-mère n'est pas là au début. Après, elle a toujours été là.</div>
+            <div class="by">par flo_1979, hier, 22:14</div>
+          </div>
+        </div>
+
+        <div class="thread">
+          <div class="patch p3">⦸</div>
+          <div class="info">
+            <h4>Le reste, qu'on ne saura pas</h4>
+            <div class="lab">Ce que personne ne peut vérifier</div>
+            <div class="cnt">22 fils · 342 messages</div>
+          </div>
+          <div class="last">
+            <div class="lb">Dernier message</div>
+            <div class="msg">Je crois que je l'ai vue. Je peux me tromper.</div>
+            <div class="by">par verlaine_88, hier, 19:47</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASIDE -->
+    <aside class="aside">
+      <div class="card online">
+        <h3>Qui est en ligne ?</h3>
+        <div class="stat">412 membres qui se souviennent.<br>32 membres connectés<br>7 visiteurs</div>
+        <div class="avatars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="pseudos">camille75, flo_1979, verlaine_88, ludo452, grosmichel, tildou, lauri_c…</div>
+        <a class="more" href="#">Voir tous les membres</a>
+      </div>
+
+      <div class="card stats">
+        <h3>Statistiques</h3>
+        <div class="row"><span>Membres inscrits</span><b>412</b></div>
+        <div class="row"><span>Sujets ouverts</span><b>68</b></div>
+        <div class="row"><span>Messages postés</span><b>1 847</b></div>
+        <div class="row"><span>Affiches déposées</span><b>236</b></div>
+        <a class="more" href="#">Voir toutes les stats</a>
+      </div>
+
+      <div class="card affiches">
+        <h3>Dernières affiches</h3>
+        <div class="aff"><span class="ic">🖼</span><div class="t"><b>Le magazine de Maman</b><br><span>par lea3012, aujourd'hui, 18:22</span></div></div>
+        <div class="aff"><span class="ic">🖼</span><div class="t"><b>Erreur de raccord ?</b><br><span>par tildou, de Philippe, 17:03</span></div></div>
+        <div class="aff"><span class="ic">🖼</span><div class="t"><b>La voiture de Philippe</b><br><span>par fred_moond, hier, 23:19</span></div></div>
+        <a class="more" href="#">Voir toutes les affiches</a>
+      </div>
+    </aside>
+  </section>
+
+  <div class="foot">Une Famille Modèle · un forum édité par MOOND STUDIO</div>
+</div>
+
+<a class="rms-badge" href="/rms">RMS<small>RATÉ MAIS STYLÉ</small></a>
+
+</body>
+</html>
